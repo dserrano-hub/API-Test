@@ -23,7 +23,7 @@ $color-black: black;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    align-items: center;
+    //align-items: center;
     background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));
     font-family: sans-serif;
 }
@@ -31,7 +31,8 @@ $color-black: black;
 header {
     margin-top: 5%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
     #search-txt {
         padding-left: 4px;
         height: 50px;
@@ -43,6 +44,35 @@ header {
         margin-bottom: -10px !important;
         color: $color-black !important;
     }
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h1 {
+    text-align: center;
+    padding: 1.5rem 2.5rem;
+    //background-image: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));
+    margin: 0 0 2rem 0;
+    font-size: 1.5rem;
+    color: black;
+}
+
+.city-name {
+    margin: 1rem;
+    background: white;
+    box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all .2s linear;
+    ;
+}
+
+.city-name:hover {
+    box-shadow: 2px 8px 45px rgba(0, 0, 0, .15);
+    transform: translate3D(0, -2px, 0);
 }
 
 
