@@ -1,4 +1,23 @@
 * {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-weight: 300;
+}
+
+.wrapper {
+	background: #50a3a2;
+    background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+    background: -moz-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+    background: -o-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+    background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%); 
+}
+
+
+
+
+/*
+* {
     margin: 0;
     padding: 0;
 }
@@ -63,7 +82,11 @@ body {
     display: inline-block;
   }
   
-  
+}
+
+img {
+    width: 20px;
+    height: 20px;
 }
 
 #main {
