@@ -19,98 +19,89 @@ function searchLocationInput() {
 
     request.open('GET', search_API);
 
-    request.onload = function () {
+    request.onload = function() {
 
-        var data = JSON.parse(this.response)
+            var data = JSON.parse(this.response)
 
-        if (request.status >= 200 && request.status < 400) {
-            data.forEach(location => {
-                console.log(location)
-                //create card 
-                const card = document.createElement('div');
-                card.setAttribute('class', 'card');
+            if (request.status >= 200 && request.status < 400) {
+                data.forEach(location => {
+                    console.log(location)
+                        //create card 
+                    const card = document.createElement('div');
+                    card.setAttribute('class', 'card');
 
-                //create title
-                const h3 = document.createElement('h1');
-                card.setAttribute('class', 'city-name');
-                h3.textContent = location.title;
+                    //create title
+                    const h3 = document.createElement('h1');
+                    card.setAttribute('class', 'city-name');
+                    h3.textContent = location.title;
 
-                //create btn for show more
-                const btn = document.createElement('button');
-                btn.setAttribute('class', 'show-more');
-                btn.innerHTML = "Details";
-                //function for detail information
+                    //create btn for show more
+                    const btn = document.createElement('button');
+                    btn.setAttribute('class', 'show-more');
+                    btn.innerHTML = "Details";
+                    //function for detail information
 
-                btn.onclick = function () {
-                    let locationId = location.woeid
-                    const detailContainer = document.createElement('div');
-                    detailContainer.setAttribute('class', 'detail-container');
-                    detailContainer.style.visibility = "visible";
+                    btn.onclick = function() {
+                        let locationId = location.woeid;
+                        const detailContainer = document.createElement('div');
+                        detailContainer.setAttribute('class', 'detail-container');
+                        detailContainer.style.visibility = "visible";
 
-                    let detail_API = `${COORS}https://www.metaweather.com/api/location/${location.woeid}`;
-                    var request = new XMLHttpRequest();
+                        let detail_API = `${COORS}https://www.metaweather.com/api/location/${location.woeid}`;
+                        var request = new XMLHttpRequest();
 
-                    request.open('GET', detail_API, true);
+                        request.open('GET', detail_API, true);
 
-                    request.onload = function () {
-                        if (this.status >= 200 && this.status < 400) {
-                            var data = JSON.parse(this.response);
-                            console.log('200! with data', data);
+                        request.onload = function() {
+                            if (this.status >= 200 && this.status < 400) {
+                                var data = JSON.parse(this.response);
+                                console.log('200! with data', data);
 
-                         //hacer uno de estos por cada cosa que hay que mostrar
+                                //hacer uno de estos por cada cosa que hay que mostrar
 
-                            //time
-                            const wind = document.createElement('p');
-                            wind.setAttribute('class', 'detail-text');
-                            wind.textContent = data.consolidated_weather[0].weather_state_name;
+                                //time
+                                const wind = document.createElement('p');
+                                wind.setAttribute('class', 'detail-text');
+                                wind.textContent = data.consolidated_weather[0].weather_state_name;
 
-                            //humidy
-                            const humidity = document.createElement('p');
-                            humidity.setAttribute('class', 'detail-text');
-                            humidity.textContent = data.consolidated_weather[0].humidity;
+                                //humidy
+                                const humidity = document.createElement('p');
+                                humidity.setAttribute('class', 'detail-text');
+                                humidity.textContent = data.consolidated_weather[0].humidity;
 
-                            //temperature
-                            const temperature = document.createElement('p');
-                            temperature.setAttribute('class', 'detail-text');
-                            temperature.textContent = data.consolidated_weather[0].the_temp;
+                                //temperature
+                                const temperature = document.createElement('p');
+                                temperature.setAttribute('class', 'detail-text');
+                                temperature.textContent = data.consolidated_weather[0].the_temp;
 
-                            //precipitation
-                            const state = document.createElement('img');
-                            state.setAttribute('class', 'detail-text');
-                            state.textContent = data.consolidated_weather[0].weather_state_icon;
+                                //precipitation
+                                const state = document.createElement('p');
+                                state.setAttribute('class', 'detail-text');
+                                state.textContent = data.consolidated_weather[0].weather_state_abbr;
 
 
-                            //agregar los nodos a la tarjeta
-                            card.appendChild(wind);
-                            card.appendChild(humidity);
-                            card.appendChild(temperature);
-                            card.appendChild(state);
+                                //agregar los nodos a la tarjeta
+                                card.appendChild(wind);
+                                card.appendChild(humidity);
+                                card.appendChild(temperature);
+                                card.appendChild(state);
 
-                        }
+                            }
+                        };
+                        request.send();
+                        card.appendChild(detailContainer);
+
                     };
-                    request.send();
-                    card.appendChild(detailContainer);
 
-                };
-
-                //insert new nodes to the document
-                container.appendChild(card);
-                card.appendChild(h3);
-                card.appendChild(btn);
-            });
-        } else {
-            console.log('error')
+                    //insert new nodes to the document
+                    container.appendChild(card);
+                    card.appendChild(h3);
+                    card.appendChild(btn);
+                });
+            } else {
+                console.log('error')
+            }
         }
-    }
-    // Send request
+        // Send request
     request.send()
 }
-
-
-
-
-
-
-
-
-
