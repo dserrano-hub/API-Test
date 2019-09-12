@@ -112,4 +112,22 @@ header .fa-search {
   color: #2e2e2e;
 }
 
+.agregar-favoritos {
+  align-items: center !important;
+  position: initial;
+  left: 30px;
+  bottom: 30px;
+  font-size: 14px;
+  color: white;
+  background: rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  transition: 0.3s all;
+}
+.agregar-favoritos:hover {
+  background: #2f96a3;
+  color: #2e2e2e;
+}
+
 /*# sourceMappingURL=style.css.map */

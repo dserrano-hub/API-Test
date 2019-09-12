@@ -21,12 +21,12 @@ function searchLocationInput() {
 
     request.onload = function() {
 
-            var data = JSON.parse(this.response)
+            var data = JSON.parse(this.response);
 
             if (request.status >= 200 && request.status < 400) {
                 data.forEach(location => {
-                    console.log(location)
-                        //create card 
+                    console.log(location);
+                    //create card 
                     const card = document.createElement('div');
                     card.setAttribute('class', 'card');
 
@@ -39,6 +39,44 @@ function searchLocationInput() {
                     const btn = document.createElement('button');
                     btn.setAttribute('class', 'show-more');
                     btn.innerHTML = "Details";
+
+                    //create btn for favorites
+                    const favorites_btn = document.createElement('button');
+                    favorites_btn.setAttribute('class', 'agregar-favoritos');
+                    favorites_btn.innerHTML = "Add favorites";
+
+
+                    // cuando se pulsa en "agregar a favoritos"
+                    favorites_btn.onclick = function(e) {
+                        let locationId = location.woeid;
+
+                        // hacemos que no se ejecute el enlace
+                        e.preventDefault();
+
+                        // leemos los datos clave del producto y los guardamos en un objeto
+                        var datos = {
+                            id: document.getElementById("locationId")
+                        };
+
+                        // leemos los favoritos del localStorage
+                        var favoritos = localStorage.getItem("favoritos") || "[]";
+                        favoritos = JSON.parse(favoritos);
+
+                        // buscamos el producto en la lista de favoritos
+                        var posLista = favoritos.findIndex(function(e) { return e.id == datos.id; });
+                        if (posLista > -1) {
+                            // si está, lo quitamos
+                            favoritos.splice(posLista, 1);
+                        } else {
+                            // si no está, lo añadimos
+                            favoritos.push(datos);
+                        }
+
+                        // guardamos la lista de favoritos 
+                        localStorage.setItem("favoritos", JSON.stringify(favoritos));
+
+                    };
+
                     //function for detail information
 
                     btn.onclick = function() {
@@ -97,11 +135,12 @@ function searchLocationInput() {
                     container.appendChild(card);
                     card.appendChild(h3);
                     card.appendChild(btn);
+                    card.appendChild(favorites_btn);
                 });
             } else {
-                console.log('error')
+                console.log('error');
             }
         }
         // Send request
-    request.send()
+    request.send();
 }
