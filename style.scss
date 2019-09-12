@@ -2,6 +2,7 @@
 
 $color-primary_grey: gray;
 $color-black: black;
+$color-banner: #000000ba;
 
 /* TYPOGRAPHY */
 
@@ -29,20 +30,59 @@ $color-black: black;
 }
 
 header {
-    margin-top: 5%;
+    margin-top: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: $color-banner;
     #search-txt {
         padding-left: 4px;
-        height: 50px;
-        width: 300px;
+        height: 40px;
+        width: 330px;
+        margin-top: 5%;
+        margin-bottom: 5%;
     }
     .fa-search {
-        height: 40px !important;
+        height: 33px !important;
         width: 40px !important;
         margin-bottom: -10px !important;
-        color: $color-black !important;
+        color: white !important;
+    }
+}
+
+.button-position {
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    background: #303f8f;
+    #favorites-button {
+        background-color: $color-banner;
+        border: 1px solid $color-banner;
+        height: 40px;
+        width: 200px;
+        color: white;
+        margin-right: 5px;
+        transition: 0.3s all;
+        border-radius: 3px;
+        margin-bottom: 15px;
+        &:hover {
+            transform: scale(1.05);
+            background-color: $color-black;
+        }
+    }
+    #clear-button {
+        background-color: $color-banner;
+        border: 1px solid $color-banner;
+        height: 40px;
+        width: 200px;
+        color: white;
+        margin-left: 5px;
+        transition: 0.3s all;
+        border-radius: 3px;
+        &:hover {
+            transform: scale(1.05);
+            background-color: $color-black;
+        }
     }
 }
 
@@ -55,7 +95,6 @@ header {
     h1 {
         text-align: center;
         padding: 1.5rem 2.5rem;
-        //background-image: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));
         margin: 0 0 2rem 0;
         font-size: 1.5rem;
         color: black;
@@ -65,7 +104,7 @@ header {
         margin: 1%;
         padding: 30px;
         position: relative;
-        transition: .3s all;
+        transition: 0.3s all;
         box-shadow: 0 2px 5px 0 rgba(3, 6, 26, 0.15);
         background: #1e4c74;
         color: white;
@@ -100,14 +139,16 @@ header {
     bottom: 30px;
     font-size: 14px;
     color: white;
-    background: rgba(0, 0, 0, .2);
+    background: $color-black;
+    border: 1px solid $color-black;
     text-decoration: none;
     text-transform: uppercase;
     padding: 10px 20px;
-    transition: .3s all;
+    transition: 0.3s all;
     &:hover {
         background: rgb(47, 150, 163);
-        color: #2e2e2e;
+        color: $color-black;
+        border: 1px solid rgb(47, 150, 163);
     }
 }
 
@@ -118,13 +159,15 @@ header {
     bottom: 30px;
     font-size: 14px;
     color: white;
-    background: rgba(0, 0, 0, .2);
+    background: $color-black;
+    border: 1px solid $color-black;
     text-decoration: none;
     text-transform: uppercase;
     padding: 10px 20px;
-    transition: .3s all;
+    transition: 0.3s all;
     &:hover {
         background: rgb(47, 150, 163);
-        color: #2e2e2e;
+        color: $color-black;
+        border: 1px solid rgb(47, 150, 163);
     }
 }

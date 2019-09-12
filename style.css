@@ -23,21 +23,60 @@
 }
 
 header {
-  margin-top: 5%;
+  margin-top: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #000000ba;
 }
 header #search-txt {
   padding-left: 4px;
-  height: 50px;
-  width: 300px;
+  height: 40px;
+  width: 330px;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 header .fa-search {
-  height: 40px !important;
+  height: 33px !important;
   width: 40px !important;
   margin-bottom: -10px !important;
-  color: black !important;
+  color: white !important;
+}
+
+.button-position {
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+  background: #303f8f;
+}
+.button-position #favorites-button {
+  background-color: #000000ba;
+  border: 1px solid #000000ba;
+  height: 40px;
+  width: 200px;
+  color: white;
+  margin-right: 5px;
+  transition: 0.3s all;
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+.button-position #favorites-button:hover {
+  transform: scale(1.05);
+  background-color: black;
+}
+.button-position #clear-button {
+  background-color: #000000ba;
+  border: 1px solid #000000ba;
+  height: 40px;
+  width: 200px;
+  color: white;
+  margin-left: 5px;
+  transition: 0.3s all;
+  border-radius: 3px;
+}
+.button-position #clear-button:hover {
+  transform: scale(1.05);
+  background-color: black;
 }
 
 #container {
@@ -101,7 +140,8 @@ header .fa-search {
   bottom: 30px;
   font-size: 14px;
   color: white;
-  background: rgba(0, 0, 0, 0.2);
+  background: black;
+  border: 1px solid black;
   text-decoration: none;
   text-transform: uppercase;
   padding: 10px 20px;
@@ -109,7 +149,8 @@ header .fa-search {
 }
 .show-more:hover {
   background: #2f96a3;
-  color: #2e2e2e;
+  color: black;
+  border: 1px solid #2f96a3;
 }
 
 .agregar-favoritos {
@@ -119,7 +160,8 @@ header .fa-search {
   bottom: 30px;
   font-size: 14px;
   color: white;
-  background: rgba(0, 0, 0, 0.2);
+  background: black;
+  border: 1px solid black;
   text-decoration: none;
   text-transform: uppercase;
   padding: 10px 20px;
@@ -127,7 +169,8 @@ header .fa-search {
 }
 .agregar-favoritos:hover {
   background: #2f96a3;
-  color: #2e2e2e;
+  color: black;
+  border: 1px solid #2f96a3;
 }
 
 /*# sourceMappingURL=style.css.map */
