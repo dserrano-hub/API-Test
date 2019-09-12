@@ -69,10 +69,22 @@ function searchLocationInput() {
                             humidity.setAttribute('class', 'detail-text');
                             humidity.textContent = data.consolidated_weather[0].humidity;
 
+                            //temperature
+                            const temperature = document.createElement('p');
+                            temperature.setAttribute('class', 'detail-text');
+                            temperature.textContent = data.consolidated_weather[0].the_temp;
+
+                            //precipitation
+                            const state = document.createElement('img');
+                            state.setAttribute('class', 'detail-text');
+                            state.textContent = data.consolidated_weather[0].weather_state_icon;
+
 
                             //agregar los nodos a la tarjeta
                             card.appendChild(wind);
                             card.appendChild(humidity);
+                            card.appendChild(temperature);
+                            card.appendChild(state);
 
                         }
                     };
