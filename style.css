@@ -16,13 +16,11 @@
 .container {
   height: 100vh;
   display: flex;
-  justify-content: center;
   flex-direction: column;
   font-family: sans-serif;
 }
 
 header {
-  margin-top: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,22 +45,6 @@ header .fa-search {
   justify-content: center;
   align-self: flex-end;
 }
-.button-position #favorites-button {
-  background-color: #000000ba;
-  border: 1px solid #000000ba;
-  height: 40px;
-  width: 200px;
-  color: white;
-  margin-right: 5px;
-  transition: 0.3s all;
-  border-radius: 3px;
-  margin-bottom: 15px;
-  cursor: pointer;
-}
-.button-position #favorites-button:hover {
-  transform: scale(1.05);
-  background-color: black;
-}
 .button-position #clear-button {
   background-color: #000000ba;
   border: 1px solid #000000ba;
@@ -85,6 +67,7 @@ header .fa-search {
   justify-content: center;
   flex-wrap: wrap;
   padding: 40px 0;
+  height: 100%;
 }
 #container-cards h1 {
   text-align: center;
@@ -100,8 +83,9 @@ header .fa-search {
   position: relative;
   transition: 0.3s all;
   box-shadow: 0 2px 5px 0 rgba(3, 6, 26, 0.15);
-  background: #1e4c74;
+  background: #37b386;
   color: white;
+  height: 300px;
 }
 #container-cards .city-name:hover {
   transform: scale(1.05);
@@ -149,30 +133,9 @@ header .fa-search {
   cursor: pointer;
 }
 .show-more:hover {
-  background: #2f96a3;
+  background: #06fda4ed;
   color: black;
-  border: 1px solid #2f96a3;
-}
-
-.agregar-favoritos {
-  align-items: center !important;
-  position: initial;
-  left: 30px;
-  bottom: 30px;
-  font-size: 14px;
-  color: white;
-  background: black;
-  border: 1px solid black;
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 10px 20px;
-  transition: 0.3s all;
-  cursor: pointer;
-}
-.agregar-favoritos:hover {
-  background: #2f96a3;
-  color: black;
-  border: 1px solid #2f96a3;
+  border: 1px solid #06fda4ed;
 }
 
 /*# sourceMappingURL=style.css.map */

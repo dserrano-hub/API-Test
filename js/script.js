@@ -32,8 +32,7 @@ function searchLocationInput() {
                 //create title
                 const h3 = document.createElement('h1');
                 card.setAttribute('class', 'city-name');
-                let txt = "Location:";
-                h3.textContent = txt + location.title;
+                h3.textContent = location.title;
 
                 //create btn for show more
                 const btn = document.createElement('button');
@@ -62,22 +61,27 @@ function searchLocationInput() {
                             //time
                             const wind = document.createElement('p');
                             wind.setAttribute('class', 'detail-text');
-                            wind.textContent = data.consolidated_weather[0].weather_state_name;
+                            let txt = "Wind: ";
+                            wind.textContent = txt + data.consolidated_weather[0].weather_state_name;
 
-                            //humidy
+                            //humidity
                             const humidity = document.createElement('p');
                             humidity.setAttribute('class', 'detail-text');
-                            humidity.textContent = data.consolidated_weather[0].humidity;
+                            let txt1 = "Humidity: ";
+                            humidity.textContent = txt1 + data.consolidated_weather[0].humidity;
 
                             //temperature
                             const temperature = document.createElement('p');
                             temperature.setAttribute('class', 'detail-text');
-                            temperature.textContent = data.consolidated_weather[0].the_temp;
+                            let txt2 = "Temperature: ";
+                            let degrees = " C";
+                            temperature.textContent = txt2 + data.consolidated_weather[0].the_temp + degrees;
 
                             //precipitation
                             const state = document.createElement('p');
                             state.setAttribute('class', 'detail-text');
-                            state.textContent = data.consolidated_weather[0].weather_state_abbr;
+                            let txt3 = "Precipitation: ";
+                            state.textContent = txt3 + data.consolidated_weather[0].weather_state_abbr;
 
 
                             //Add nodes to cards
