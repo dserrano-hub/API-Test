@@ -25,7 +25,7 @@ $color-banner: #000000ba;
     justify-content: center;
     flex-direction: column;
     //align-items: center;
-    background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));
+    //background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));
     font-family: sans-serif;
 }
 
@@ -54,7 +54,7 @@ header {
     display: flex;
     justify-content: center;
     align-self: flex-end;
-    background: #303f8f;
+    //background: #303f8f;
     #favorites-button {
         background-color: $color-banner;
         border: 1px solid $color-banner;
@@ -88,7 +88,7 @@ header {
     }
 }
 
-#container {
+#container-cards {
     display: flex;
     flex-direction: row;
     justify-content: center;

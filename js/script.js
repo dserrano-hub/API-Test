@@ -2,11 +2,13 @@
 const app = document.getElementById('main');
 let searchButton = document.getElementById("search-btn");
 let searchInput = document.getElementById("search-txt");
-let container = document.getElementById("container");
+let container = document.getElementById("container-cards");
 const COORS = 'https://cors-anywhere.herokuapp.com/';
+const clear_btn = document.getElementById("clear-button");
 
 //Events
 searchButton.addEventListener("click", searchLocationInput);
+clear_btn.addEventListener("click", clear);
 
 function searchLocationInput() {
     var request = new XMLHttpRequest();
@@ -30,63 +32,14 @@ function searchLocationInput() {
                 //create title
                 const h3 = document.createElement('h1');
                 card.setAttribute('class', 'city-name');
-                h3.textContent = location.title;
+                let txt = "Location:";
+                h3.textContent = txt + location.title;
 
                 //create btn for show more
                 const btn = document.createElement('button');
                 btn.setAttribute('class', 'show-more');
                 btn.innerHTML = "Details";
 
-                //create btn for favorites
-                const favorites_btn = document.createElement('button');
-                favorites_btn.setAttribute('class', 'agregar-favoritos');
-                favorites_btn.innerHTML = "Add favorites";
-
-
-                //Add to favorites
-                favorites_btn.onclick = function(e) {
-
-
-                    let fav_API = `${COORS}https://www.metaweather.com/api/location/${location.woeid}`;
-                    var request = new XMLHttpRequest();
-
-                    request.open('GET', fav_API, true);
-
-                    request.onload = function() {
-                        let locationId = location.woeid;
-
-                        // hacemos que no se ejecute el enlace
-                        e.preventDefault();
-
-                        // leemos los datos clave del producto y los guardamos en un objeto
-                        var datos = {
-                            id: document.getElementById("locationId")
-                        };
-
-                        // leemos los favoritos del localStorage
-                        var favoritos = localStorage.getItem("favoritos") || "[]";
-                        favoritos = JSON.parse(favoritos);
-
-                        // buscamos el producto en la lista de favoritos
-                        var posLista = favoritos.findIndex(function(e) { return e.id == datos.id; });
-                        if (posLista > -1) {
-                            // si está, lo quitamos
-                            favoritos.splice(posLista, 1);
-                        } else {
-                            // si no está, lo añadimos
-                            favoritos.push(datos);
-                        }
-
-                        // guardamos la lista de favoritos 
-                        localStorage.setItem("favoritos", JSON.stringify(favoritos));
-
-                        // leemos los favoritos del localStorage
-                        var favoritos = localStorage.getItem("favoritos") || "[]";
-                        favoritos = JSON.parse(favoritos);
-
-                    };
-                    request.send();
-                }
 
                 //function for detail information
 
@@ -144,7 +97,6 @@ function searchLocationInput() {
                 container.appendChild(card);
                 card.appendChild(h3);
                 card.appendChild(btn);
-                card.appendChild(favorites_btn);
             });
         } else {
             console.log('error');
@@ -154,11 +106,23 @@ function searchLocationInput() {
 
     // Send request
     request.send();
+
+
 }
-const clear = document.getElementById('clear-button');
+/*const clear = document.getElementById('clear-button');
 clear.onclick = function() {
-    //searchButton = document.getElementById('search-btn');
-    //searchButton.removeChild(document.getElementById('search-btn'));
-    var elem = document.querySelector('card');
-    elem.parentNode.removeChild(elem);
+    searchButton = document.getElementById('search-btn');
+    searchButton.removeChild(document.getElementById('search-btn'));
+    console.log();
+}
+*/
+
+function clear() {
+    let containerCards = document.getElementById('main');
+    //let containerCards = document.getElementsByClassName('container');
+    let cards = document.getElementById('city-name');
+    //containerCards.removeChild(cards);
+    containerCards.innerHTML = '';
+    console.log("clearrrr");
+    console.log('este es', container);
 }
