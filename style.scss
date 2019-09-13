@@ -4,8 +4,8 @@ $color-primary_grey: gray;
 $color-black: black;
 $color-white: white;
 $color-banner: #000000ba;
-$color-card: #37b386;
-$color-btn_detail: #06fda4ed;
+$color-card: #2590c5;
+$color-btn_detail: #06e4fdba;
 
 /* TYPOGRAPHY */
 
@@ -40,18 +40,50 @@ header {
     justify-content: center;
     align-items: center;
     background-color: $color-banner;
-    #search-txt {
-        padding-left: 4px;
-        height: 40px;
-        width: 330px;
-        margin-top: 5%;
-        margin-bottom: 5%;
+    .image {
+        padding-left: 8px !important;
+        padding-top: 5px;
+        img {
+            width: 70px;
+            height: 70px;
+        }
     }
-    .fa-search {
-        height: 33px !important;
-        width: 40px !important;
-        margin-bottom: -10px !important;
-        color: $color-white !important;
+    .search {
+        margin-left: auto;
+        #search-txt {
+            padding-left: 4px;
+            height: 40px;
+            width: 330px;
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+        .fa-search {
+            height: 33px !important;
+            width: 40px !important;
+            margin-bottom: -10px !important;
+            color: $color-white !important;
+        }
+    }
+    .button-position {
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+        padding-right: 8px !important;
+        #clear-button {
+            background-color: $color-banner;
+            border: 1px solid $color-banner;
+            height: 40px;
+            width: 200px;
+            color: $color-white;
+            margin-left: 5px;
+            transition: 0.3s all;
+            border-radius: 3px;
+            cursor: pointer;
+            &:hover {
+                transform: scale(1.05);
+                background-color: $color-black;
+            }
+        }
     }
 }
 
@@ -122,30 +154,6 @@ header {
                 color: $color-black;
                 border: 1px solid $color-btn_detail;
             }
-        }
-    }
-}
-
-
-/* FOOTER */
-
-.button-position {
-    display: flex;
-    justify-content: center;
-    align-self: flex-end;
-    #clear-button {
-        background-color: $color-banner;
-        border: 1px solid $color-banner;
-        height: 40px;
-        width: 200px;
-        color: $color-white;
-        margin-left: 5px;
-        transition: 0.3s all;
-        border-radius: 3px;
-        cursor: pointer;
-        &:hover {
-            transform: scale(1.05);
-            background-color: $color-black;
         }
     }
 }
