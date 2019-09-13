@@ -1,3 +1,3 @@
 document.addEventListener("DOMContentLoaded", function() {
-    console.log('Your document is ready!');
+    console.log('Your detail is ready!');
 });

@@ -58,7 +58,7 @@ header .fa-search {
   font-size: 1.5rem;
   color: black;
 }
-#container-cards .city-name {
+#container-cards .city-card {
   width: 18%;
   margin: 1%;
   padding: 30px;
@@ -69,36 +69,36 @@ header .fa-search {
   color: white;
   height: 300px;
 }
-#container-cards .city-name:hover {
+#container-cards .city-card:hover {
   transform: scale(1.05);
 }
 @media screen and (max-width: 1480px) {
-  #container-cards .city-name {
+  #container-cards .city-card {
     width: 23%;
   }
 }
 @media screen and (max-width: 1420px) {
-  #container-cards .city-name {
+  #container-cards .city-card {
     width: 31.3333333333%;
   }
 }
 @media screen and (max-width: 1240px) {
-  #container-cards .city-name {
+  #container-cards .city-card {
     width: 48%;
   }
 }
 @media screen and (max-width: 820px) {
-  #container-cards .city-name {
+  #container-cards .city-card {
     width: 98%;
     margin-top: 2%;
     margin-bottom: 2%;
   }
 }
-#container-cards .city-name h1 {
+#container-cards .city-card h1 {
   text-transform: uppercase;
   margin-bottom: 10px;
 }
-#container-cards .city-name .show-more {
+#container-cards .city-card .show-more {
   align-items: center !important;
   position: absolute;
   left: 30px;
@@ -113,7 +113,7 @@ header .fa-search {
   transition: 0.3s all;
   cursor: pointer;
 }
-#container-cards .city-name .show-more:hover {
+#container-cards .city-card .show-more:hover {
   background: #06fda4ed;
   color: black;
   border: 1px solid #06fda4ed;
