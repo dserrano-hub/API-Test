@@ -7,6 +7,7 @@
   font-weight: 200;
 }
 
+/* ALL */
 * {
   margin: 0;
   padding: 0;
@@ -20,6 +21,7 @@
   font-family: sans-serif;
 }
 
+/* HEADER */
 header {
   display: flex;
   justify-content: center;
@@ -40,28 +42,7 @@ header .fa-search {
   color: white !important;
 }
 
-.button-position {
-  display: flex;
-  justify-content: center;
-  align-self: flex-end;
-}
-.button-position #clear-button {
-  background-color: #000000ba;
-  border: 1px solid #000000ba;
-  height: 40px;
-  width: 200px;
-  color: white;
-  margin-left: 5px;
-  transition: 0.3s all;
-  border-radius: 3px;
-  cursor: pointer;
-}
-.button-position #clear-button:hover {
-  transform: scale(1.05);
-  background-color: black;
-}
-
-/* CARDS */
+/* MAIN */
 #container-cards {
   display: flex;
   flex-direction: row;
@@ -136,6 +117,28 @@ header .fa-search {
   background: #06fda4ed;
   color: black;
   border: 1px solid #06fda4ed;
+}
+
+/* FOOTER */
+.button-position {
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+}
+.button-position #clear-button {
+  background-color: #000000ba;
+  border: 1px solid #000000ba;
+  height: 40px;
+  width: 200px;
+  color: white;
+  margin-left: 5px;
+  transition: 0.3s all;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.button-position #clear-button:hover {
+  transform: scale(1.05);
+  background-color: black;
 }
 
 /*# sourceMappingURL=style.css.map */

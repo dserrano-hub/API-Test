@@ -16,6 +16,9 @@ $color-btn_detail: #06fda4ed;
     font-weight: 200;
 }
 
+
+/* ALL */
+
 * {
     margin: 0;
     padding: 0;
@@ -31,6 +34,9 @@ $color-btn_detail: #06fda4ed;
     //background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));
     font-family: sans-serif;
 }
+
+
+/* HEADER */
 
 header {
     //margin-top: 120px;
@@ -53,30 +59,8 @@ header {
     }
 }
 
-.button-position {
-    display: flex;
-    justify-content: center;
-    align-self: flex-end;
-    //background: #303f8f;
-    #clear-button {
-        background-color: $color-banner;
-        border: 1px solid $color-banner;
-        height: 40px;
-        width: 200px;
-        color: $color-white;
-        margin-left: 5px;
-        transition: 0.3s all;
-        border-radius: 3px;
-        cursor: pointer;
-        &:hover {
-            transform: scale(1.05);
-            background-color: $color-black;
-        }
-    }
-}
 
-
-/* CARDS */
+/* MAIN */
 
 #container-cards {
     display: flex;
@@ -142,6 +126,31 @@ header {
                 color: $color-black;
                 border: 1px solid $color-btn_detail;
             }
+        }
+    }
+}
+
+
+/* FOOTER */
+
+.button-position {
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    //background: #303f8f;
+    #clear-button {
+        background-color: $color-banner;
+        border: 1px solid $color-banner;
+        height: 40px;
+        width: 200px;
+        color: $color-white;
+        margin-left: 5px;
+        transition: 0.3s all;
+        border-radius: 3px;
+        cursor: pointer;
+        &:hover {
+            transform: scale(1.05);
+            background-color: $color-black;
         }
     }
 }
