@@ -61,6 +61,7 @@ header .fa-search {
   background-color: black;
 }
 
+/* CARDS */
 #container-cards {
   display: flex;
   flex-direction: row;
@@ -116,8 +117,7 @@ header .fa-search {
   text-transform: uppercase;
   margin-bottom: 10px;
 }
-
-.show-more {
+#container-cards .city-name .show-more {
   align-items: center !important;
   position: absolute;
   left: 30px;
@@ -132,7 +132,7 @@ header .fa-search {
   transition: 0.3s all;
   cursor: pointer;
 }
-.show-more:hover {
+#container-cards .city-name .show-more:hover {
   background: #06fda4ed;
   color: black;
   border: 1px solid #06fda4ed;
